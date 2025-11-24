@@ -14,6 +14,9 @@ class Pokemon {
   get health() {
     return this.#health;
   }
+  setHealth(number){
+    this.#health = number;
+  }
 
   get level() {
     return this.#level;
@@ -25,6 +28,7 @@ class Pokemon {
 
   levelUp() {
     this.setLevel();
+    this.setHealth(this.health +10);
     console.log(`${this.name} leveled up to level ${this.#level}!`);
   }
 

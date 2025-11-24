@@ -23,7 +23,11 @@ class Phone {
   }
 
   unlock(password) {
-    return this.#password === password;
+    if (this.#password === password){
+        return 'true';
+    }else{
+        return `Invalid password`;
+    }
   }
 }
 
