@@ -1,6 +1,7 @@
 # Object-Oriented Programming Assessment
 
 **Table of Contents:**
+
 - [Assessment Overview](#assessment-overview)
   - [Setup Instructions](#setup-instructions)
   - [Running The Linter for Code Style](#running-the-linter-for-code-style)
@@ -48,7 +49,7 @@ swe-assessment-2-oop/
     └── pokemon.js                    # Section 3: Problem 3
 ```
 
---- 
+---
 
 ### Setup Instructions
 
@@ -71,13 +72,14 @@ Install Dependencies
 npm install
 ```
 
---- 
+---
 
 ### Running The Linter for Code Style
 
 Prior to submitting your work, run the "linter" which will inform you of any code style issues in your code.
 
 **Check for linting errors:**
+
 ```bash
 npm run lint
 ```
@@ -89,6 +91,7 @@ npm run lint
 Before submitting your assessment, go through this checklist to ensure you haven't missed any critical details!
 
 **Submission Checklist:**
+
 - [ ] All questions in `src/short-response.md` are answered
 - [ ] All functions in `src/from-scratch.js` are written
 - [ ] All links are provided in `src/system-design.md` are fixed
@@ -101,24 +104,24 @@ Before submitting your assessment, go through this checklist to ensure you haven
 
 1. Run the linter:
 
-    ```bash
-    npm run lint
-    ```
+   ```bash
+   npm run lint
+   ```
 
-    And fix any issues.
+   And fix any issues.
 
 2. Commit your changes:
-  
-    ```bash
-    git add -A
-    git commit -m "Completed assessment"
-    ```
+
+   ```bash
+   git add -A
+   git commit -m "Completed assessment"
+   ```
 
 3. Push to GitHub:
-   
-    ```bash
-    git push
-    ```
+
+   ```bash
+   git push
+   ```
 
 4. Create a pull request to merge `draft` into `main` and tag your instructor for review.
 
@@ -132,18 +135,21 @@ Before submitting your assessment, go through this checklist to ensure you haven
 ### What Resources Can I Use?
 
 **Allowed Resources:**
+
 - ✅ MDN Documentation
 - ✅ Your notes from class
 - ✅ Previous assignments and labs
 - ✅ Running code in Node to test ideas
 
 **NOT Allowed:**
+
 - ❌ AI tools (ChatGPT, Claude, Copilot, etc.)
 - ❌ Asking classmates for help
 - ❌ Searching for solutions online
 - ❌ Posting questions on Stack Overflow, Reddit, etc.
 
 **If You're Stuck:**
+
 - Read the error messages carefully
 - Use `console.log()` to debug your code
 - Take a break and come back with fresh eyes
@@ -174,11 +180,12 @@ A: A few seconds over is fine. Just avoid excessive rambling.
 **Q: Can I resubmit if I'm not happy with my score?**
 A: Talk to your instructor about retake options.
 
---- 
+---
 
 ### Good Luck! 🚀
 
 Remember:
+
 - Read all instructions carefully before starting
 - Don't spend too much time on one question - move on and come back
 - Save your work frequently (`git commit` regularly)
@@ -190,7 +197,7 @@ If you have questions about the instructions (not the content), ask an instructo
 
 ### Question 1: Encapsulation
 
-In your own words, explain what does _encapsulation_ refer to? Why is this concept beneficial when programming? 
+In your own words, explain what does _encapsulation_ refer to? Why is this concept beneficial when programming?
 
 Provide a code snippet to illustrate _encapsulation_.
 
@@ -202,9 +209,9 @@ In the code snippet below, what does `this` refer to?
 
 ```js
 class Counter {
-	constructor() {
-		this.count = 0;
-	}
+  constructor() {
+    this.count = 0;
+  }
   increment() {
     this.count++;
   }
@@ -237,7 +244,7 @@ You're building a game where players can raise different digital pets: Cats, Dog
 
 ## Section 2: Class Implementation
 
-For these problems, there will *not* be any provided tests. You must implement your code to the best of your ability. We've provided example usage that you can use to manually test your code.
+For these problems, there will _not_ be any provided tests. You must implement your code to the best of your ability. We've provided example usage that you can use to manually test your code.
 
 ### Problem 1: Debug Broken Code - Bank and BankAccount
 
@@ -246,11 +253,13 @@ For these problems, there will *not* be any provided tests. You must implement y
 ![A BankAccount and Bank UML Diagram](./img/bank-uml.png)
 
 Remember the rules for UML Diagrams:
-* `+` indicates a public property/method
-* `-` indicates a private property/method
-* Underline indicates a `static` property/method
+
+- `+` indicates a public property/method
+- `-` indicates a private property/method
+- Underline indicates a `static` property/method
 
 As a result, the AI Coding Agent produced the file `src/bank.js`. It is your task to:
+
 1. Analyze the code and verify that it works as expected.
 2. Comment out any broken code.
 3. Implement fixes.
@@ -302,8 +311,8 @@ node src/bank.js
 - **Instance Properties:**
   - `name` (String, public, set by the constructor)
   - `type` (String, public, set by the constructor)
-  - `health` (Number, *private*, starting value of `100`)
-  - `level` (Number, *private*, starting value of `1`)
+  - `health` (Number, _private_, starting value of `100`)
+  - `level` (Number, _private_, starting value of `1`)
 - **Instance Methods:**
   - "Getter" methods for the `health` and `level` private fields. Bonus points if you use the `get` syntax! ([get MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get))
   - `levelUp()` - increases `level` by `1` and increases `health` by `10`. Then print `"{name} leveled up to level {level}!"`.
@@ -335,23 +344,19 @@ console.log(squirtle.getLevel()); // 2
 // OR if you use the get syntax
 console.log(squirtle.level); // 2
 
-
 // 4. Checking on health
-console.log(squirtle.getHealth());   // Should be 100
+console.log(squirtle.getHealth()); // Should be 100
 // OR if you use the get syntax
-console.log(squirtle.health);   // Should be 100
-
+console.log(squirtle.health); // Should be 100
 
 // 5. Attacking until one faints
 while (!charizard.isFainted()) {
-  squirtle.attack(charizard);  
+  squirtle.attack(charizard);
 }
 console.log("Squirtle has fainted!");
 
-
 // 6. Finding a Pokemon instance
 console.log(Pokemon.findByName("Charizard")); // Pokemon { name: "Charizard", type: "Fire" }
-
 
 // 7. Viewing count of all Pokemon
 console.log("Total Pokemon:", Pokemon.getTotalPokemon()); // 2
@@ -371,7 +376,7 @@ Create a `Phone` class with the following:
   - `brand` (String, public, set by the constructor)
   - `model` (String, public, set by the constructor)
   - `password` (String, private, set by the constructor)
-  - `batteryLevel` (Number, public, starting value of `100`) 
+  - `batteryLevel` (Number, public, starting value of `100`)
 - Instance Methods:
   - `makeCall(number)` - decreases battery by `5`, returns `"Calling {number}"`
   - `charge()` - sets battery back to `100`, returns `"Phone fully charged"`
@@ -413,7 +418,7 @@ const smartPhone = new iPhone("iPhone 14 Pro", "TimeToLearn882", 3);
 
 console.log(smartPhone); // iPhone { brand: "Apple", model: "iPhone 14 Pro", numberOfCameras: 3, batteryLevel: 100}
 
-// 1. Making a call 
+// 1. Making a call
 console.log(smartPhone.makeCall("555-1234")); // Calling 555-1234 using FaceTime audio
 console.log(smartPhone.batteryLevel); // Should be 95
 
@@ -433,71 +438,76 @@ console.log(smartPhone.unlock("TimeToLearn882")); // true
 ## Section 3: System Design
 
 This section is meant to simulate an interview (and your upcoming assessment) so **aim to spend approximately 2 hours on it total**, and up to 3 hours if you must.
-* 20-30 min: Understanding requirements and sketching initial design
-* 30-40 min: Creating the UML diagram in LucidChart
-* 20-30 min: Writing bullet points for explanation
-* 15-20 min: Recording and reviewing the Loom
+
+- 20-30 min: Understanding requirements and sketching initial design
+- 30-40 min: Creating the UML diagram in LucidChart
+- 20-30 min: Writing bullet points for explanation
+- 15-20 min: Recording and reviewing the Loom
 
 Your goal should be to hone your intuition around good system design and this time constraint will force you to make decisions.
 
 ### Part 1: Design Your System
 
-**Scenario**: You are tasked with designing an **online restaurant ordering system**. Your system design should capture the essential *entities (classes)*, the *responsibilities* of those entities (properties/methods), and the *relationships* between them.
+**Scenario**: You are tasked with designing an **online restaurant ordering system**. Your system design should capture the essential _entities (classes)_, the _responsibilities_ of those entities (properties/methods), and the _relationships_ between them.
 
 We recommend that you take notes as you create your system in the `system-design.md` file and **use pen and paper** to draw an initial sketch of your design.
 
 **System Requirements**:
-* Your system should be able to handle the following functionality:
-  * A restaurant can manage the items in their menu
-  * A customer can place an order with items from the restaurant's menu
-  * An order can be marked as "pending", "in progress", "picked up", or "delivered"
-* Your system must include at least three classes that are connected by relationships (associations), with at least one one-to-many relationship.
+
+- Your system should be able to handle the following functionality:
+  - A restaurant can manage the items in their menu
+  - A customer can place an order with items from the restaurant's menu
+  - An order can be marked as "pending", "in progress", "picked up", or "delivered"
+- Your system must include at least three classes that are connected by relationships (associations), with at least one one-to-many relationship.
 
 **Constraints**:
-* Restaurants in this system are assumed to be pickup or delivery. No dining-in.
 
-**Explanation Topics:** 
+- Restaurants in this system are assumed to be pickup or delivery. No dining-in.
+
+**Explanation Topics:**
 When you record your explanation, you will be asked to explain:
-- How your system handles each of the system functionality requirements above: 
-- Why you chose the specific relationships and class responsibilities.  
-- At least one significant design decision you made and what alternatives or trade-offs you considered to arrive at your final design. 
+
+- How your system handles each of the system functionality requirements above:
+- Why you chose the specific relationships and class responsibilities.
+- At least one significant design decision you made and what alternatives or trade-offs you considered to arrive at your final design.
   - Examples of significant decisions: where to store your data, how your system handles order status, which class is responsible for X, Y, or Z.
 
 ### Part 2: Create a UML Diagram
 
-As you approach finalizing your design, transition to [LucidChart](https://www.lucidchart.com/) to create your UML diagram. 
+As you approach finalizing your design, transition to [LucidChart](https://www.lucidchart.com/) to create your UML diagram.
 
 When you are done, click **Share** in the top right corner, turn on the **Shareable link** and then paste the link in the `src/system-design.md` file.
 
 **UML Requirements**: Your UML Diagram _must_ have the following:
 
 1. Model relationships using arrows and appropriate multiplicity notation:
-   * Exactly one: `1` (e.g. an adoption application has exactly 1 Pet)
-   * Zero or more (many): `0..*` (e.g. a shelter has 0 or more pets)
+
+   - Exactly one: `1` (e.g. an adoption application has exactly 1 Pet)
+   - Zero or more (many): `0..*` (e.g. a shelter has 0 or more pets)
 
 2. Annotate relationships with **association labels** to describe each relationship
-   *  Example: "Shelter --creates many--> Applications"
-   *  Example: "Application --references one--> Adopter"
+
+   - Example: "Shelter --creates many--> Applications"
+   - Example: "Application --references one--> Adopter"
 
 3. Include detailed class definitions with:
-   * **Properties** (attributes) and their **data types** (e.g. `name: String`)
-   * **Methods** (behaviors) and their **named parameters** (e.g. `findPetById(id)`)
+   - **Properties** (attributes) and their **data types** (e.g. `name: String`)
+   - **Methods** (behaviors) and their **named parameters** (e.g. `findPetById(id)`)
 
 ### Step 3: Record Your Explanation
 
 1. Use **Loom** to record your screen. For instructions on downloading Loom, refer to the [Marcy GitBook](https://marcylabschool.gitbook.io/marcy-lab-school-docs/environment-setup/loom).
-   
 2. In your video, you must explain the **Explanation Topics** listed in part 1.
 
-3. Prior to recording, we highly recommend that you write out the key points of your explanation in bullets in the `src/system.design.md` file. 
-  
+3. Prior to recording, we highly recommend that you write out the key points of your explanation in bullets in the `src/system.design.md` file.
+
 4. Be specific and use proper technical vocabulary:
-   | ✅ Good Example                                                          | 🚫 Bad Example                |
+   | ✅ Good Example | 🚫 Bad Example |
    |--------------------------------------------------------------------------|------------------------------|
-   | "instance property" or "instance method"                                 | "variable" or "function"     |
-   | "Pet status is updated by invoking setStatus()"                          | "A Pet changes status"       |
-   | "A shelter houses many pets"                                             | "pets are in a shelter"      |
-   | "A donor submits an application by invoking shelter.createApplication()" | "An application is created"  |
+   | "instance property" or "instance method" | "variable" or "function" |
+   | "Pet status is updated by invoking setStatus()" | "A Pet changes status" |
+   | "A shelter houses many pets" | "pets are in a shelter" |
+   | "A donor submits an application by invoking shelter.createApplication()" | "An application is created" |
 
 5. Keep your video concise (roughly between 5-7 minutes)
 
